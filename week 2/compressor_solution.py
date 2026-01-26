@@ -60,8 +60,7 @@ def compress_text(text: str, k: int, return_count: bool = False):
       if len(positions) >= 2:
          heapq.heappush(heap, (-len(positions), first_pos, pair_version[pair], pair))
 
-   replacement_code = 65 # starts with 'A'
-   merge_count = 0
+   replacement_code = 65 # starts with 'A', 26 characters to 'Z'
 
    # function to add pair to dict and if total positions is more than 1, add to heap
    def add_pair(pos, pair, update_heap=True):
@@ -196,7 +195,6 @@ def compress_text(text: str, k: int, return_count: bool = False):
             prev[next_j] = i
          prev[j] = -1
          next[j] = -1
-         merge_count += 1
 
          # add new pairs around merged symbol
          if prev_i != -1:
