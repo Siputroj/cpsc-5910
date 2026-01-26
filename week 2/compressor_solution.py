@@ -258,9 +258,9 @@ def _run_tests():
       elapsed = time.perf_counter() - start
 
       print(f"================= case {case_num} =================")
-      print(f"input: {text}")
+      print(f"input: \'{text}\'")
       print(f"merges: {k}")
-      print(f"output: {result}")
+      print(f"output: \'{result}\'")
       
       print(f"time: {elapsed:.6f}s")
 
